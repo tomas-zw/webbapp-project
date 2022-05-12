@@ -1,8 +1,8 @@
 import MapView, { Marker } from "react-native-maps";
 import * as Location from "expo-location";
 import { useState, useEffect } from 'react';
-import { View } from "react-native";
-import { Base } from "../../styles";
+import { View, Text } from "react-native";
+import { Base, Typography } from "../../styles";
 import DelayMarker from "./DelayMarker";
 
 export default function Delays({ delayedTrains, stations }) {
@@ -34,6 +34,7 @@ export default function Delays({ delayedTrains, stations }) {
                 }}
                 title="Min plats"
                 pinColor="green"
+                key="user"
             />);
         })();
     }, []);
@@ -41,6 +42,7 @@ export default function Delays({ delayedTrains, stations }) {
     return (
         <View style={Base.dark}>
             <View style={Base.mapContainer}>
+            <Text style={Typography.normal}> { errorMessage }</Text>
                 <MapView
                     style={Base.map}
                     initialRegion={ initialRegion }
