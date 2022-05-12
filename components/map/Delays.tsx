@@ -1,6 +1,6 @@
 import MapView, { Marker } from "react-native-maps";
-import { View, Text, StyleSheet } from "react-native";
-import { Base, Typography } from "../../styles";
+import { View } from "react-native";
+import { Base } from "../../styles";
 
 export default function Delays() {
     const initialRegion = {
@@ -11,8 +11,7 @@ export default function Delays() {
     };
 
     return (
-        <View style={Base.base}>
-            <Text style={Typography.header2}>Karta TODO</Text>
+        <View style={Base.dark}>
             <View style={Base.mapContainer}>
                 <MapView
                     style={Base.map}
@@ -27,13 +26,3 @@ export default function Delays() {
         </View>
     );
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "flex-end",
-        alignItems: "center",
-    },
-    map: {
-        ...StyleSheet.absoluteFillObject,
-    },
-});

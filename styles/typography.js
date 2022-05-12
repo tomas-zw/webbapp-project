@@ -6,6 +6,7 @@ export const header1 = {
 export const header2 = {
     fontSize: 34,
     marginBottom: 28,
+    color: "white",
 };
 
 export const header3 = {
