@@ -1,5 +1,5 @@
 export default interface Location {
-    location_name: String,
-    priority: number,
-    order: number,
+    LocationName: String,
+    Priority: number,
+    Order: number,
 }

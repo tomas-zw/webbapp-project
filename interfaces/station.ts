@@ -1,8 +1,8 @@
 export default interface Station {
-    advertised_location_name: String,
-    geometry: {
-        wgs84: String,
+    AdvertisedLocationName: String,
+    Geometry: {
+        WGS84: String,
     }
-    location_signature: String,
-    platform_line: Array<String>,
+    LocationSignature: String,
+    PlatformLine: Array<String>,
 }
