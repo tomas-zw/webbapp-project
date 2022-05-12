@@ -49,7 +49,12 @@ export default function App() {
                             stations={stations}
                             />}
                     </Tab.Screen>
-                    <Tab.Screen name="Delays" component={Delays} />
+                    <Tab.Screen name="Delays">
+                        {() => <Delays
+                            delayedTrains={delayedTrains}
+                            stations={stations}
+                            />}
+                    </Tab.Screen>
                     <Tab.Screen name="Login" component={Login} />
                 </Tab.Navigator>
             </NavigationContainer>

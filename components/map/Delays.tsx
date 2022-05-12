@@ -3,8 +3,10 @@ import * as Location from "expo-location";
 import { useState, useEffect } from 'react';
 import { View } from "react-native";
 import { Base } from "../../styles";
+import DelayMarker from "./DelayMarker";
 
-export default function Delays() {
+export default function Delays({ delayedTrains, stations }) {
+
     const [locationMarker, setLocationMarker] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
     const initialRegion = {
@@ -31,7 +33,7 @@ export default function Delays() {
                     longitude: currentLocation.coords.longitude
                 }}
                 title="Min plats"
-                pinColor="blue"
+                pinColor="green"
             />);
         })();
     }, []);
@@ -43,11 +45,11 @@ export default function Delays() {
                     style={Base.map}
                     initialRegion={ initialRegion }
                     >
-                    <Marker
-                        coordinate={{ latitude: 56.17, longitude: 15.59 }}
-                        title="Min första markör"
-                    />
                     { locationMarker }
+                    <DelayMarker
+                        delayedTrains={delayedTrains}
+                        stations={stations}
+                    />
                     </MapView>
             </View>
         </View>
