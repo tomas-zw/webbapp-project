@@ -6,7 +6,7 @@ import Auth from './Auth';
 
 const Stack = createNativeStackNavigator();
 
-export default function Deliveries(props) {
+export default function AuthStack(props) {
     return (
         <Stack.Navigator initialRouteName="Auth">
             <Stack.Screen name="Auth" component={Auth} />

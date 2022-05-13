@@ -13,12 +13,14 @@ import { Base } from './styles';
 import Home from "./components/Home";
 import Delays from "./components/map/Delays";
 import Auth from "./components/auth/AuthStack";
+import User from "./components/user/UserStack";
 
 const Tab = createBottomTabNavigator();
 const routeIcons = {
   "Home": "home",
   "Delays": "train",
   "Login": "log-in",
+  "Premium": "person-circle",
 };
 
 export default function App() {
@@ -61,6 +63,15 @@ export default function App() {
                             stations={stations}
                             />}
                     </Tab.Screen>
+                    {isLoggedIn ?
+                    <Tab.Screen name="Premium">
+                        {(screenProps) => <User
+                            {...screenProps}
+                            delayedTrains={delayedTrains}
+                            stations={stations}
+                            setIsLoggedIn={setIsLoggedIn}
+                            />}
+                    </Tab.Screen> :
                     <Tab.Screen name="Login">
                         {(screenProps) => <Auth
                             {...screenProps}
@@ -69,6 +80,7 @@ export default function App() {
                             setIsLoggedIn={setIsLoggedIn}
                             />}
                     </Tab.Screen>
+                }
                 </Tab.Navigator>
             </NavigationContainer>
 
