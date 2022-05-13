@@ -5,8 +5,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useState, useEffect } from 'react';
-import delaysModel from './models/delays';
 
+import delaysModel from './models/delays';
 import { Base } from './styles';
 import Home from "./components/Home";
 import Delays from "./components/map/Delays";

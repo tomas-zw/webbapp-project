@@ -18,3 +18,11 @@ export const normal = {
     fontSize: 20,
     marginBottom: 28,
 };
+
+export const buttonText = {
+    fontSize: 18,
+    color: "#fff",
+    alignSelf: "center",
+    textTransform: "uppercase"
+
+};

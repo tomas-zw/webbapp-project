@@ -16,6 +16,13 @@ export const base = {
     backgroundColor: "#202020",
 };
 
+export const imgBackgroundContainer = {
+    width: "100%",
+    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+};
+
 export const map = {
     ...StyleSheet.absoluteFillObject,
 };
@@ -28,3 +35,12 @@ export const mapContainer = {
     borderWidth: 1,
     borderColor: "white",
 };
+
+export const buttonContainer = {
+    elevation: 8,
+    backgroundColor: "gray",
+    borderRadius: 10,
+    borderColor: "white",
+    paddingVertical: 10,
+    paddingHorizontal: 30
+}
