@@ -5,8 +5,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useState, useEffect } from 'react';
+import FlashMessage from 'react-native-flash-message';
 
 import delaysModel from './models/delays';
+import authModel from './models/auth';
 import { Base } from './styles';
 import Home from "./components/Home";
 import Delays from "./components/map/Delays";
@@ -27,6 +29,7 @@ export default function App() {
     useEffect(async () => {
         setDelayedTrains(await delaysModel.getDelays());
         setStations(await delaysModel.getStations());
+        setIsLoggedIn(await authModel.loggedIn());
     }, []);
 
     return (
@@ -42,6 +45,7 @@ export default function App() {
                     tabBarInactiveTintColor: 'gray',
                     tabBarActiveBackgroundColor: '#202020',
                     tabBarInactiveBackgroundColor: '#202020',
+                    headerShown: false,
                   })}
                 >
                     <Tab.Screen name="Home">
@@ -69,7 +73,7 @@ export default function App() {
             </NavigationContainer>
 
             <StatusBar style="auto" />
-
+            <FlashMessage position="top" />
         </SafeAreaView>
     );
 };

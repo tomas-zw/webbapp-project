@@ -9,12 +9,14 @@ export default function Auth({ delayedTrains, stations, navigation}) {
 
                 <TouchableOpacity
                     style={Base.buttonContainer}
+                    onPress={() => {navigation.navigate("Logga in")}}
                     >
                     <Text style={Typography.buttonText}>Logga in</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={Base.buttonContainer}
+                    onPress={() => {navigation.navigate("Registrera")}}
                     >
                     <Text style={Typography.buttonText}>Registrera</Text>
                 </TouchableOpacity>

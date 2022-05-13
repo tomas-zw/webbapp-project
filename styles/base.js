@@ -47,3 +47,8 @@ export const buttonContainer = {
     paddingHorizontal: 30,
     margin: 20,
 }
+
+export const alignCenter = {
+    alignItems: "center",
+
+};

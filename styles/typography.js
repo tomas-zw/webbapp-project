@@ -24,5 +24,9 @@ export const buttonText = {
     color: "#fff",
     alignSelf: "center",
     textTransform: "uppercase"
+};
 
+export const inputLabel = {
+    fontSize: 18,
+    color: "white",
 };
