@@ -41,6 +41,9 @@ export const buttonContainer = {
     backgroundColor: "gray",
     borderRadius: 10,
     borderColor: "white",
+    width: 200,
+    height: 40,
     paddingVertical: 10,
-    paddingHorizontal: 30
+    paddingHorizontal: 30,
+    margin: 20,
 }

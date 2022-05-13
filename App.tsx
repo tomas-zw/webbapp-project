@@ -10,7 +10,7 @@ import delaysModel from './models/delays';
 import { Base } from './styles';
 import Home from "./components/Home";
 import Delays from "./components/map/Delays";
-import Login from "./components/auth/Login";
+import Auth from "./components/auth/AuthStack";
 
 const Tab = createBottomTabNavigator();
 const routeIcons = {
@@ -22,6 +22,7 @@ const routeIcons = {
 export default function App() {
     const [delayedTrains, setDelayedTrains] = useState([]);
     const [stations, setStations] = useState([]);
+    const [isLoggedIn, setIsLoggedIn] = useState<Boolean>(false);
 
     useEffect(async () => {
         setDelayedTrains(await delaysModel.getDelays());
@@ -56,7 +57,14 @@ export default function App() {
                             stations={stations}
                             />}
                     </Tab.Screen>
-                    <Tab.Screen name="Login" component={Login} />
+                    <Tab.Screen name="Login">
+                        {(screenProps) => <Auth
+                            {...screenProps}
+                            delayedTrains={delayedTrains}
+                            stations={stations}
+                            setIsLoggedIn={setIsLoggedIn}
+                            />}
+                    </Tab.Screen>
                 </Tab.Navigator>
             </NavigationContainer>
 

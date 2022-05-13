@@ -14,7 +14,6 @@ export default function Home({ delayedTrains, stations, navigation}) {
             { station.AdvertisedLocationName } Antal: {station.Geometry.WGS84}</Text>);
 
     const hasStations = () => {
-        if (delayedTrains) {
             return (<TouchableOpacity
                 style={Base.buttonContainer}
                 onPress={() => {navigation.navigate("Delays")}}
@@ -23,14 +22,13 @@ export default function Home({ delayedTrains, stations, navigation}) {
                 </TouchableOpacity>
             )
         }
-        return <Text>LADDAR STATIONER</Text>
-
-    }
 
     return (
         <View>
             <ImageBackground source={sunset} style={Base.imgBackgroundContainer}>
-                {hasStations()}
+                {stations ? hasStations():
+                <Text>Laddar</Text>
+                }
             </ImageBackground>
         </View>
     )
