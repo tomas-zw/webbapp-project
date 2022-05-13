@@ -44,7 +44,8 @@ export default function App() {
                   })}
                 >
                     <Tab.Screen name="Home">
-                        {() => <Home
+                        {(screenProps) => <Home
+                            {...screenProps}
                             delayedTrains={delayedTrains}
                             stations={stations}
                             />}

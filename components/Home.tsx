@@ -4,7 +4,7 @@ import Station from "../interfaces/station";
 
 import sunset from "../assets/proj_background.jpg";
 
-export default function Home({ delayedTrains, stations}) {
+export default function Home({ delayedTrains, stations, navigation}) {
 
 
     console.log(stations[0])
@@ -17,6 +17,7 @@ export default function Home({ delayedTrains, stations}) {
         if (delayedTrains) {
             return (<TouchableOpacity
                 style={Base.buttonContainer}
+                onPress={() => {navigation.navigate("Delays")}}
                 >
                     <Text style={Typography.buttonText}>Förseningar</Text>
                 </TouchableOpacity>
