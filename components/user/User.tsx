@@ -13,13 +13,31 @@ export default function User({ navigation, setIsLoggedIn }) {
             <TouchableOpacity
                 style={Base.buttonContainer}
                 onPress={() => {
+                        navigation.navigate("Delayed trains");
+                    }}
+                >
+                <Text style={Typography.buttonText}>Förseningar</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                style={Base.buttonContainer}
+                onPress={() => {
+                        navigation.navigate("Favorites");
+                    }}
+                >
+                <Text style={Typography.buttonText}>Favoriter</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                style={Base.buttonContainer}
+                onPress={() => {
                         storage.deleteToken();
                         setIsLoggedIn(false);
                         navigation.navigate("Home");
                     }}
                 >
-                    <Text style={Typography.buttonText}>Logga ut</Text>
-                </TouchableOpacity>
+                <Text style={Typography.buttonText}>Logga ut</Text>
+            </TouchableOpacity>
             </ImageBackground>
         </View>
     )

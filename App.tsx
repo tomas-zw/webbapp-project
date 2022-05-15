@@ -75,8 +75,6 @@ export default function App() {
                     <Tab.Screen name="Login">
                         {(screenProps) => <Auth
                             {...screenProps}
-                            delayedTrains={delayedTrains}
-                            stations={stations}
                             setIsLoggedIn={setIsLoggedIn}
                             />}
                     </Tab.Screen>
