@@ -52,7 +52,7 @@ export default function UserDelays({ navigation, delayedTrains, stations }) {
     return (
         <ScrollView>
             <DataTable>
-                <DataTable.Header>
+                <DataTable.Header >
                     <DataTable.Title>Station</DataTable.Title>
                     <DataTable.Title>Ny Avgångstid</DataTable.Title>
                 </DataTable.Header>

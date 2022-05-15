@@ -7,7 +7,7 @@ import sunset from "../assets/proj_background.jpg";
 export default function Home({ delayedTrains, stations, navigation}) {
 
 
-    console.log(stations[0])
+    //console.log(stations[0])
 
     const allStations = stations.map((station: Station, index: number) =>
         <Text style={Typography.normal} key={index}>

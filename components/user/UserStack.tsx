@@ -35,8 +35,8 @@ export default function UserStack(props) {
             <Stack.Screen name="Delayed train">
                 {(screenProps) => <UserMap
                     {...screenProps}
-                    delayedTrains={props.delayedTrains}
-                    stations={props.stations}
+                    //delayedTrains={props.delayedTrains}
+                    //stations={props.stations}
                     />}
             </Stack.Screen>
         </Stack.Navigator>

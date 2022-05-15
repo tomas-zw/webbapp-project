@@ -10,31 +10,19 @@ export default function DelayMarker({ delayedTrains, stations }) {
             let latAndLong = getCoordinates(stationName[0].Geometry.WGS84);
             let delayInMinutes = totalDelay(train.AdvertisedTimeAtLocation, train.EstimatedTimeAtLocation);
 
-            return (<>
-                <Marker
-                    coordinate={{
-                        latitude: parseFloat(latAndLong[1]),
-                        longitude: parseFloat(latAndLong[0])
-                    }}
-                    key = {index}
-                    title= {stationName[0].AdvertisedLocationName}
-                    description= {"Ny tid: " + new Date(train.EstimatedTimeAtLocation).toLocaleString("se-SV")}
-                    pinColor="blue"
+            return (<Marker
+                coordinate={{
+                    latitude: parseFloat(latAndLong[1]),
+                    longitude: parseFloat(latAndLong[0])
+                }}
+                key = {index}
+                title= {stationName[0].AdvertisedLocationName}
+                description= {"Ny tid: " + new Date(train.EstimatedTimeAtLocation).toLocaleString("se-SV")}
+                pinColor="blue"
                 />
-                <Circle
-                    center={{
-                        latitude: parseFloat(latAndLong[1]),
-                        longitude: parseFloat(latAndLong[0])
-                    }}
-                    radius= {circleRadius(delayInMinutes)}
-                    key= {(1 + index) * (-1)}
-                />
-                </>
-
             );
 
         });
-
 
     function getCoordinates (wgs84) {
         return wgs84.slice(7, -1).split(" ");
