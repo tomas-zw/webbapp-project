@@ -14,6 +14,7 @@ export default function Register({navigation, setIsLoggedIn}) {
         if (auth.email && auth.password) {
             const result = await AuthModel.register(auth.email, auth.password);
             // console.log(result.data.message);
+            navigation.navigate("Auth");
             showMessage({
                 message: result.title,
                 description: result.message,
@@ -25,7 +26,6 @@ export default function Register({navigation, setIsLoggedIn}) {
                 description: 'E-post eller lösenord saknas',
                 type: 'warning'
             });
-            navigation.navigate("Auth");
         }
     }
 
