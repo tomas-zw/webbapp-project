@@ -1,5 +1,4 @@
 import { Text, ScrollView } from "react-native";
-import { Base, Typography } from "../../styles";
 import { DataTable } from "react-native-paper";
 
 export default function UserDelays({ navigation, delayedTrains, stations }) {

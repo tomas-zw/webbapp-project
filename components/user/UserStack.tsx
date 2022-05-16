@@ -2,7 +2,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import User from './User';
 import UserDelays from './UserDelays';
-import UserFavorites from './UserFavorites';
 import UserMap from './UserMap';
 
 const Stack = createNativeStackNavigator();
@@ -24,19 +23,9 @@ export default function UserStack(props) {
                     />}
             </Stack.Screen>
 
-            <Stack.Screen name="Favorites">
-                {(screenProps) => <UserFavorites
-                    {...screenProps}
-                    delayedTrains={props.delayedTrains}
-                    stations={props.stations}
-                    />}
-            </Stack.Screen>
-
             <Stack.Screen name="Delayed train">
                 {(screenProps) => <UserMap
                     {...screenProps}
-                    //delayedTrains={props.delayedTrains}
-                    //stations={props.stations}
                     />}
             </Stack.Screen>
         </Stack.Navigator>
